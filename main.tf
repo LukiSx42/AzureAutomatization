@@ -1,3 +1,12 @@
+terraform {
+  backend "azurerm" {
+    resource_group_name   = "test-storage"
+    storage_account_name  = "lukisteststorage"
+    container_name        = "tf-container"
+    key                   = "terraform.tfstate"
+  }
+}
+
 resource "azurerm_resource_group" "test" {
   name     = "test-resources"
   location = "westeurope"
